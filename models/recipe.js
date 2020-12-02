@@ -18,9 +18,9 @@ const recipeShcema = new Schema({
   title: {
     type: String,
   },
-  img: {
-    data: Buffer,
-    contentType: String,
+  cuisine: {
+    type: String,
+    enum: ['Japanese', 'Korean', 'French', 'American', 'Baking'],
   },
   note: {
     type: String,
@@ -31,12 +31,7 @@ const recipeShcema = new Schema({
   directions: {
     type: String,
   },
-  category: {
-    type: Schema.Types.ObjectId,
-    ref: 'Category',
-  },
   likes: [likeSchema],
-
 }, {
   timestamps: true,
 });

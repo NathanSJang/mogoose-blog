@@ -20,7 +20,8 @@ passport.use(
             name: profile.displayName,
             googleId: profile.id,
             email: profile.emails[0].value,
-            avatar: profile.photos[0].value
+            avatar: profile.photos[0].value,
+            admin: false,
           });
           return cb(null, user);
         } catch (err) {
