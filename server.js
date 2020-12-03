@@ -43,8 +43,8 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/', recipesRouter);
 app.use('/cuisines', cuisinesRouter);
+app.use('/', recipesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

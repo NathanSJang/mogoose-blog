@@ -2,6 +2,8 @@
   <% if(user.admin) { %>
     <a href="/cuisines/<%= cuisine._id %>/recipes/new">Add recipe</a>
   <% } %>
+  <% recipe.forEach(function(r) { %>
+        <p> <%= r.title %></p>
+    <% }); %>
 
-  
 <%- include('../partials/footer') %>
