@@ -3,7 +3,7 @@
     <a href="/cuisines/<%= cuisine._id %>/recipes/new">Add recipe</a>
   <% } %>
   <% recipe.forEach(function(r) { %>
-        <p> <%= r.title %></p>
+        <a href="/recipes/<%= r.id %>"><p> <%= r.title %></p></a>
         <% if(user.admin) { %>
           <form action="/recipes/<%= r._id %>?_method=DELETE" class="delte-form" method="POST">
             <button type="submit" class="btn btn-outline-danger">Delete</button>
