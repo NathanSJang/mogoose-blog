@@ -5,18 +5,25 @@ const Recipes = require('../models/recipe');
 module.exports = {
   index,
   new: newCuisine,
+  show,
   create,
   delete: deleteCuisine,
 };
 
 function index(req, res) {
   Cuisines.find({}, function(err, cuisines) {
-    res.render('cuisines/index', {title: 'Cusines', cuisines});
+    res.render('cuisines/index', { title: 'Cusines', cuisines });
   });
 };
 
 function newCuisine(req, res) {
-  res.render('cuisines/new', {title: 'Add Cuisine'});
+  res.render('cuisines/new', { title: 'Add Cuisine' });
+};
+
+function show(req, res) {
+  Cuisines.findById(req.params.id, function(err, cuisine) {
+    res.render('cuisines/show', { title: 'Recipes', cuisine });
+  });
 };
 
 function create(req, res) {

@@ -5,7 +5,7 @@ const isLoggedIn = require('../config/auth');
 
 router.get('/', isLoggedIn, cuisinesCtrl.index);
 router.get('/new', isLoggedIn, cuisinesCtrl.new);
-// router.get('/:id', cuisinesCtrl.show);
+router.get('/:id', cuisinesCtrl.show);
 router.post('/', isLoggedIn, cuisinesCtrl.create);
 router.delete('/:id', isLoggedIn, cuisinesCtrl.delete);
 

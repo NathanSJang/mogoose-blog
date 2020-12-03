@@ -2,7 +2,7 @@
 <div>
 <% if (cuisines.length) { %>
   <% cuisines.forEach(function(c) { %>
-    <p><%= c.name %></p>
+    <a href="/cuisines/<%= c._id %>"><p><%= c.name %></p></a>
     <% if(user.admin) { %>
       <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
         <button type="submit" class="btn btn-outline-danger">Delete</button>
