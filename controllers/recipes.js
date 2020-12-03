@@ -1,8 +1,10 @@
 const Recipes = require('../models/recipe');
+const Cuisines = require('../models/cuisines');
 
 module.exports = {
   new: newRecipe,
   create,
+  delete: deleteRecipe,
 };
 
 function newRecipe(req, res) {
@@ -15,5 +17,11 @@ function create(req, res) {
   req.body.cuisine = req.params.id
   Recipes.create(req.body, function(err) {
     res.redirect(`/cuisines/${req.params.id}`);
-  })
-}
+  });
+};
+
+function deleteRecipe(req, res) {
+    Recipes.findByIdAndDelete(req.params.id, function(err, deletedRecipe) {
+      res.redirect(`/cuisines`);
+  });
+};

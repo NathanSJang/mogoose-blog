@@ -4,6 +4,11 @@
   <% } %>
   <% recipe.forEach(function(r) { %>
         <p> <%= r.title %></p>
+        <% if(user.admin) { %>
+          <form action="/recipes/<%= r._id %>?_method=DELETE" class="delte-form" method="POST">
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+        <% } %>
     <% }); %>
 
 <%- include('../partials/footer') %>

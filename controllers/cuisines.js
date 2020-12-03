@@ -25,7 +25,7 @@ function show(req, res) {
     Recipes.find({cuisine: req.params.id}, function(err, recipe) {
       console.log(cuisine);
       console.log(recipe);
-      res.render('cuisines/show', { title: cuisine.name, cuisine, recipe });
+      res.render('cuisines/show', { title: 'recipes', cuisine, recipe });
     });
   });
 };
