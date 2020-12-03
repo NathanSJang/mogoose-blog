@@ -1,3 +1,7 @@
 <%- include('../partials/header') %>
+  <% if(user.admin) { %>
+    <a href="/cuisines/<%= cuisine._id %>/recipes/new">Add recipe</a>
+  <% } %>
 
+  
 <%- include('../partials/footer') %>
