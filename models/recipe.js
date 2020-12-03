@@ -9,7 +9,14 @@ const likeSchema = new Schema({
   },
   comment: {
     type: String,
-  }
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
+  userName: {
+    type: String,
+  },
 }, {
   timestamps: true
 });
