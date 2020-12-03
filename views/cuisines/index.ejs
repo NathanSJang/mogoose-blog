@@ -1,9 +1,16 @@
 <%- include('../partials/header') %>
+<div>
 <% if (cuisines.length) { %>
   <% cuisines.forEach(function(c) { %>
     <p><%= c.name %></p>
-    <% }); %>
+    <% if(user.admin) { %>
+      <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+      </form>
+    <% } %>
+  <% }); %>
 <% } else { %>
 <h3>Please Add cuisines</h3>
 <% } %>
+</div>
 <%- include('../partials/footer') %>

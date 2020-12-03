@@ -7,7 +7,7 @@ router.get('/', isLoggedIn, cuisinesCtrl.index);
 router.get('/new', isLoggedIn, cuisinesCtrl.new);
 // router.get('/:id', cuisinesCtrl.show);
 router.post('/', isLoggedIn, cuisinesCtrl.create);
-// router.delete('/:id', cuisinesCtrl.delete);
+router.delete('/:id', isLoggedIn, cuisinesCtrl.delete);
 
 
 module.exports = router;

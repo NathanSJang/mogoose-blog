@@ -6,6 +6,7 @@ module.exports = {
   index,
   new: newCuisine,
   create,
+  delete: deleteCuisine,
 };
 
 function index(req, res) {
@@ -24,4 +25,10 @@ function create(req, res) {
     if(err) return res.render('cuisines/new');
     res.redirect('/cuisines');
   })
+};
+
+function deleteCuisine(req, res) {
+  Cuisines.findByIdAndDelete(req.params.id, function(errr, deletedCuisine) {
+    res.redirect('/cuisines');
+  });
 };
