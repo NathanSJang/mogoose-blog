@@ -18,10 +18,7 @@ const recipeShcema = new Schema({
   title: {
     type: String,
   },
-  cuisine: {
-    type: String,
-    enum: ['Japanese', 'Korean', 'French', 'American', 'Baking'],
-  },
+  cuisine: [cuisineSchema],
   note: {
     type: String,
   },
