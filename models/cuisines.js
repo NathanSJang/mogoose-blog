@@ -7,3 +7,5 @@ const cuisineSchema = new Schema({
     enum: ['Japanese', 'Korean', 'French', 'American', 'Baking'],
   }
 });
+
+module.exports = mongoose.model('Cuisine', cuisineSchema);

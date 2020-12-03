@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<form action="/cuisines" method="POST">
+  <p>
+    <label>
+      <input name="name" type="radio" value="Japanese" />
+      <span>Japanese</span>
+    </label>
+    <label>
+      <input name="name" type="radio" value="Korean" />
+      <span>Korean</span>
+    </label>
+    <label>
+      <input name="name" type="radio" value="French" />
+      <span>French</span>
+    </label>
+    <label>
+      <input name="name" type="radio" value="American" />
+      <span>American</span>
+    </label>
+    <label>
+      <input name="name" type="radio" value="Baking" />
+      <span>Baking</span>
+    </label>
+  </p>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+</form>
+<%- include('../partials/footer') %>

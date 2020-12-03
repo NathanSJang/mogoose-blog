@@ -18,7 +18,10 @@ const recipeShcema = new Schema({
   title: {
     type: String,
   },
-  cuisine: [cuisineSchema],
+  cuisine: {
+    type: Schema.Types.ObjectId,
+    ref: 'Cuisine',
+  },
   note: {
     type: String,
   },

@@ -3,10 +3,10 @@ const router = express.Router();
 const cuisinesCtrl = require('../controllers/cuisines')
 const isLoggedIn = require('../config/auth');
 
-router.get('/', cuisinesCtrl.index);
-// router.get('/new', cuisinesCtrl.new);
+router.get('/', isLoggedIn, cuisinesCtrl.index);
+router.get('/new', isLoggedIn, cuisinesCtrl.new);
 // router.get('/:id', cuisinesCtrl.show);
-// router.post('/', isLoggedIn, cuisinesCtrl.create);
+router.post('/', isLoggedIn, cuisinesCtrl.create);
 // router.delete('/:id', cuisinesCtrl.delete);
 
 

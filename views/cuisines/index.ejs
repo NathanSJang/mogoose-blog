@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<% if (cuisines.length) { %>
+  <% cuisines.forEach(function(c) { %>
+    <p><%= c.name %></p>
+    <% }); %>
+<% } else { %>
+<h3>Please Add cuisines</h3>
+<% } %>
+<%- include('../partials/footer') %>
