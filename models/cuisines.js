@@ -5,6 +5,12 @@ const cuisineSchema = new Schema({
   name: {
     type: String,
     enum: ['Japanese', 'Korean', 'French', 'American', 'Baking'],
+  },
+  imageUrl: {
+    type: String,
+  },
+  icornName: {
+    type: String,
   }
 });
 

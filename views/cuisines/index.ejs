@@ -1,5 +1,15 @@
 <%- include('../partials/header') %>
 
+<span>
+  <h1><%= title %>
+    <button type="submit" class="waves-light btn-small add-btn"> 
+      <% if(user.admin) { %>
+      <a class="add" href="/cuisines/new">Add Cuisines</a>
+      <% } %>
+    </button>
+  </h1>
+</span>
+
 <div class="section">
   <div class="col s12">
     <span class="title"><%= title %></span>
@@ -10,14 +20,14 @@
   <div class="col s4">
     <div class="card">
       <div class="card-image">
-        <a href="/cuisines/<%= c._id %>"><img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"></a>
+        <a href="/cuisines/<%= c._id %>"><img src="<%= c.imageUrl %>"></a>
       </div>
       <div class="card-action">
         <% if(user.admin) { %>
           <div class="row content-box">
             <p class="cuisine-title"><%= c.name %></p>
               <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
-                <button type="submit" class="waves-effect waves-light btn-small add-btn">Delete</button>
+                <button type="submit" class="waves-effect waves-light btn-small delete-btn">Delete</button>
               </form>
           </div>
         <% } %>

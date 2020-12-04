@@ -1,7 +1,12 @@
 body {
-  margin: 0;
-  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 a {
@@ -91,16 +96,43 @@ a {
   float: right;
 }
 
+/*cuisine new page*/
+#cuisine-select {
+  margin-left: 0.5px;
+}
+
+/* show page */
+
 .content-box {
   margin-bottom: 0;
 }
 
 .recipe-image {
   height: 450px;
-  width: 900px;
+  width: 930px;
   position: relative;
+  margin-bottom: 15px;
 }
 
-button > a {
+.add {
   text-decoration: none;
+  color: white;
+}
+
+.recipe-content {
+  margin: 0 15px;
+}
+
+.recipe-content > p {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.footer-icon {
+  margin-bottom: 5px;
+}
+
+.recipe-title {
+  text-align: center;
+  font-size: 20px;
 }
