@@ -84,10 +84,23 @@ a {
 }
 
 .add-btn {
-  position: absolute;
-  right: 10px;
+  float: right;
+}
+
+.delete-btn {
+  float: right;
 }
 
 .content-box {
   margin-bottom: 0;
+}
+
+.recipe-image {
+  height: 450px;
+  width: 900px;
+  position: relative;
+}
+
+button > a {
+  text-decoration: none;
 }
