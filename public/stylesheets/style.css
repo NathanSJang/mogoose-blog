@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  margin: 0;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -16,4 +17,77 @@ a {
 
 .login img {
   height: 30px;
+}
+
+/* INDEX */
+.area {
+  font-size: 12px;
+  line-height: 0.75rem;
+}
+.card .card-title {
+  font-size: 20px;
+}
+
+.card-image {
+  overflow: hidden;
+
+  width: 100%;
+
+  position: relative;
+}
+
+.card-image:before {
+  content: "";
+
+  display: block;
+
+  padding-bottom: 75%; /* 600 / 800 = 0,75 */
+}
+
+.team-member .card-image:before {
+  padding-bottom: 100%;
+}
+
+.card-image > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 305px;
+  height: 230px;
+}
+
+.card-image > img {
+  bottom: auto;
+  right: auto;
+
+  width: 100%;
+
+  height: auto !important;
+}
+
+.card .card-content {
+  min-height: 105px;
+}
+.card .card-content .card-title {
+  line-height: 22px;
+  padding-top: 10px;
+}
+.title {
+  color: #846c63 !important;
+  text-transform: uppercase;
+}
+
+.cuisine-title {
+  float: left;
+}
+
+.add-btn {
+  position: absolute;
+  right: 10px;
+}
+
+.content-box {
+  margin-bottom: 0;
 }

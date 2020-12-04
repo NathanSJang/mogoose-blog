@@ -1,16 +1,34 @@
 <%- include('../partials/header') %>
-<div>
-<% if (cuisines.length) { %>
-  <% cuisines.forEach(function(c) { %>
-    <a href="/cuisines/<%= c._id %>"><p><%= c.name %></p></a>
-    <% if(user.admin) { %>
-      <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
-        <button type="submit" class="btn btn-outline-danger">Delete</button>
-      </form>
-    <% } %>
-  <% }); %>
-<% } else { %>
-<h3>Please Add cuisines</h3>
-<% } %>
+
+<div class="section">
+  <div class="col s12">
+    <span class="title"><%= title %></span>
+  </div>
+  <div class="row">
+  <% if (cuisines.length) { %>
+    <% cuisines.forEach(function(c) { %>
+  <div class="col s4">
+    <div class="card">
+      <div class="card-image">
+        <a href="/cuisines/<%= c._id %>"><img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80"></a>
+      </div>
+      <div class="card-action">
+        <% if(user.admin) { %>
+          <div class="row content-box">
+            <p class="cuisine-title"><%= c.name %></p>
+              <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
+                <button type="submit" class="waves-effect waves-light btn-small add-btn">Delete</button>
+              </form>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+    <% }); %>
+  </div>
 </div>
+  <% } else { %>
+  <h3>Please Add cuisines</h3>
+  <% } %>
+
 <%- include('../partials/footer') %>

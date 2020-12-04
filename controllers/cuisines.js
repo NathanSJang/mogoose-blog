@@ -12,7 +12,7 @@ module.exports = {
 
 function index(req, res) {
   Cuisines.find({}, function(err, cuisines) {
-    res.render('cuisines/index', { title: 'Cusines', cuisines });
+    res.render('cuisines/index', { title: 'Cuisines', cuisines });
   });
 };
 
