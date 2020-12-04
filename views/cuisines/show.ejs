@@ -18,12 +18,12 @@
     <div class="col s12 ">
       <a href="/recipes/<%= r.id %>">
         <div class="card-image">
-          <img class="recipe-image" src="https://images.unsplash.com/photo-1606851452836-d5213cc6d6d8?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
+          <img class="recipe-image" src="<%= r.recipeImageUrl %>" alt="recipe-image">
         </div>
       </a>
     </div>
     <div class="recipe-content">
-      <p>A few years ago, when travelling for fun was still a thing, I went to Amsterdam and ate one of the best apple cakes (also known as </p>
+      <p> <%= r.note %> </p>
     </div>
   </div>
       <hr>

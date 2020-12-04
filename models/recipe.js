@@ -25,7 +25,7 @@ const recipeShcema = new Schema({
   title: {
     type: String,
   },
-  imageurl: {
+  recipeImageUrl: {
     type:String,
   },
   cuisine: {
@@ -36,7 +36,7 @@ const recipeShcema = new Schema({
     type: String,
   },
   ingredients: {
-    type: String,
+    type: [String],
   },
   directions: {
     type: String,

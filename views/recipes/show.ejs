@@ -1,6 +1,40 @@
 <%- include('../partials/header') %>
 
-<p><%= recipe.title %></p>
+<div>
+    <header>
+      <p class="recipe-title"> <%= recipe.title %></p>
+    </header>
+    <div class="row">
+      <div class="col s12 ">
+          <div class="card-image">
+            <img class="recipe-image" src="<%= recipe.recipeImageUrl %>" alt="recipe-image">
+          </div>
+      </div>
+      <div class="recipe-content">
+        <h3>Note</h3>
+        <p> <%= recipe.note %> </p>
+        <h3>Ingredients</h3>
+        <p> <%= recipe.ingredients %> </p>
+        <h3>Directions</h3>
+        <p> <%= recipe.directions %> </p>
+      </div>
+    </div>
+        <hr>
+        <footer>
+          <div class="footer-icon">
+            <span>
+              <i class="tiny material-icons">date_range</i>
+              <time><%= recipe.createdAt.toLocaleDateString() %></time>
+            </span>
+          </div>
+          <div>
+            <span>
+              <i class="tiny material-icons"><%= cuisine.icornName %></i>
+              <%= cuisine.name %>
+            </span>
+          </div>
+        </footer>
+  </div>
 
 <form id="add-review-form" method="POST" action="/recipes/<%= recipe._id %>/likes">
   <label>Review:</label>

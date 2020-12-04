@@ -16,7 +16,9 @@ function newRecipe(req, res) {
 
 function show(req, res) {
   Recipes.findById(req.params.id, function(err, recipe) {
-    res.render('recipes/show', { title: 'The Detail of Recipe', recipe });
+    Cuisines.findById(recipe.cuisine, function(err, cuisine) {
+      res.render('recipes/show', { title: 'The Detail of Recipe', recipe, cuisine });
+    });
   });
 };
 
