@@ -19,13 +19,15 @@
     <% cuisines.forEach(function(c) { %>
   <div class="col s4">
     <div class="card">
-      <div class="card-image">
-        <a href="/cuisines/<%= c._id %>"><img src="<%= c.imageUrl %>"></a>
-      </div>
+      <a href="/cuisines/<%= c._id %>">
+        <div class="card-image">
+          <img src="<%= c.imageUrl %>">
+        </div>
+      </a>
       <div class="card-action">
-        <% if(user.admin) { %>
-          <div class="row content-box">
-            <p class="cuisine-title"><%= c.name %></p>
+        <div class="row content-box">
+          <p class="cuisine-title"><%= c.name %></p>
+          <% if(user.admin) { %>
               <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
                 <button type="submit" class="waves-effect waves-light btn-small delete-btn">Delete</button>
               </form>

@@ -25,6 +25,9 @@ const recipeShcema = new Schema({
   title: {
     type: String,
   },
+  imageurl: {
+    type:String,
+  },
   cuisine: {
     type: Schema.Types.ObjectId,
     ref: 'Cuisine',
