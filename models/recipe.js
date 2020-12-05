@@ -39,7 +39,7 @@ const recipeShcema = new Schema({
     type: [String],
   },
   directions: {
-    type: String,
+    type: [String],
   },
   likes: [likeSchema],
 }, {

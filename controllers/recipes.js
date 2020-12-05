@@ -23,6 +23,10 @@ function show(req, res) {
 };
 
 function create(req, res) {
+  let i = req.body.ingredients;
+  let d = req.body.directions;
+  req.body.ingredients = i.split('\r\n');
+  req.body.directions = d.split('\r\n');
   req.body.cuisine = req.params.id
   Recipes.create(req.body, function(err) {
     res.redirect(`/cuisines/${req.params.id}`);

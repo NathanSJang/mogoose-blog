@@ -23,7 +23,6 @@ function newCuisine(req, res) {
 function show(req, res) {
   Cuisines.findById(req.params.id, function(err, cuisine) {
     Recipes.find({cuisine: req.params.id}, function(err, recipe) {
-      console.log(cuisine);
       console.log(recipe);
       res.render('cuisines/show', { title: 'Recipes', cuisine, recipe });
     });

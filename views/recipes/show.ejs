@@ -14,9 +14,15 @@
         <h3>Note</h3>
         <p> <%= recipe.note %> </p>
         <h3>Ingredients</h3>
-        <p> <%= recipe.ingredients %> </p>
+        <ul>
+          <% recipe.ingredients.forEach(function(i) { %>
+            <li>• <%= i %></li>
+          <% }) %>
+        </ul>
         <h3>Directions</h3>
-        <p> <%= recipe.directions %> </p>
+            <% recipe.directions.forEach(function(d) { %>
+              <p class="directions-content">• <%= d %></p>  
+            <% }) %>
       </div>
     </div>
         <hr>
@@ -36,18 +42,48 @@
         </footer>
   </div>
 
-<form id="add-review-form" method="POST" action="/recipes/<%= recipe._id %>/likes">
-  <label>Review:</label>
-  <textarea name="comment"></textarea>
-  <label>Rating:</label>
-  <select name="like">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-  <input type="submit" value="Add Review">
+<form  action="/recipes/<%= recipe._id %>/likes" method="POST" >
+  <div class="row rating">
+    <label>
+      <input type="radio" name="like" value="1" />
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+    </label>
+    <label>
+      <input type="radio" name="like" value="2" />
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+    </label>
+    <label>
+      <input type="radio" name="like" value="3" />
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>   
+    </label>
+    <label>
+      <input type="radio" name="like" value="4" />
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+    </label>
+    <label>
+      <input type="radio" name="like" value="5" />
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
+    </label>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input placeholder="Enter Your Comment" id="image-url" type="text" class="validate" name="comment">
+      <label for="image-url">Comment</label>
+    </div>
+  </div>
+  <button class="btn waves-effect waves-light add-btn" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
 </form>
 
 <% if (recipe.likes.length) { %>
