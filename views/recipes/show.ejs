@@ -67,36 +67,40 @@
   </button>
 </form>
 
+<div class="comment-box">
 <% if (recipe.likes.length) { %>
   <% let total = 0 %>
   <% recipe.likes.forEach(function(r) { %>
     <% total += r.like %>
-  <div class="row comment-body">
-    <div>
+  <div class="row comment-head">
+    <div class="col s12">
       <span class="like-user"><%= r.userName %></span>
       <span class="like-date"><%= r.createdAt.toLocaleDateString() %></span>
     </div>
   </div>
-  <div class="row">
-    <div>
-      <span class="like-rating"><%= r.like %>
-      <p><%= r.comment %></p>
-      </span>
-      <span class="like-delete">
+  <div class="row comment-body">
+    <div class="col s12">
+      <span class="like-rating"><%= r.like %></span>
+      <p class="like-comment"><%= r.comment %></p>
+      <span class="like-delete delete-btn">
         <% if (user && user._id.equals(r.user)) {%>
         <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
           <button type="submit">X</button>
         </form>
+      </span>
+      </div>
     </div>
       <% } %>
     </span>
     <% }); %>
     <% } else { %>
-      <div>
-        <p>No Reviews Yet</p>
+      <div class="row">
+        <div clas="col s12">
+          <p class="like-comment">No Reviews Yet</p>
+        </div>
       </div>
       <% } %>
-  </div>
+</div>
 
 
 <%- include('../partials/footer') %>

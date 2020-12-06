@@ -144,6 +144,20 @@ label {
   margin-top: 8em;
 }
 
-.comment-body {
+.comment-box {
+  margin-top: 15em;
   margin-bottom: 4em;
+}
+
+.comment-head {
+  margin-top: 8em;
+}
+
+.comment-body {
+  margin-top: 4em;
+}
+
+.like-comment {
+  display: inline;
+  margin-left: 2em;
 }
