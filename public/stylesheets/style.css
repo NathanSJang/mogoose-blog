@@ -157,6 +157,11 @@ label {
   margin-top: 4em;
 }
 
+.like-user {
+  font-size: 1.5em;
+  margin-right: 1em;
+}
+
 .like-comment {
   display: inline;
   margin-left: 2em;

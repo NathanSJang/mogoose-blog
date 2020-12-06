@@ -1,9 +1,11 @@
 <%- include('../partials/header') %>
 <span>
   <h1><%= title %>
-    <button type="submit" class="waves-light btn-small add-btn"> 
+    <button type="submit" class="btn waves-effect black add-btn white-text"> 
       <% if(user.admin) { %>
-      <a class="add" href="/cuisines/<%= cuisine._id %>/recipes/new">Add recipe</a>
+      <a class="add white-text" href="/cuisines/<%= cuisine._id %>/recipes/new">Add recipe 
+        <i class="material-icons right white-text">local_dining</i>
+      </a>
       <% } %>
     </button>
   </h1>
@@ -31,7 +33,9 @@
         <div class="footer-icon">
           <% if(user.admin) { %>
             <form action="/recipes/<%= r._id %>?_method=DELETE" class="delte-form" method="POST">
-              <button type="submit" class="waves-effect waves-light btn-small delete-btn">Delete</button>
+              <button type="submit" class="waves-effect black btn-small delete-btn">
+                <i class="small material-icons white-text">delete_outline</i>
+              </button>
             </form>
           <% } %>
           <span>
