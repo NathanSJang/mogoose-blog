@@ -139,3 +139,11 @@ label {
 .comment-input {
   float: right !important;
 }
+
+.like-box {
+  margin-top: 8em;
+}
+
+.comment-body {
+  margin-bottom: 4em;
+}

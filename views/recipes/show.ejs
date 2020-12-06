@@ -42,7 +42,7 @@
         </footer>
   </div>
 
-<form  action="/recipes/<%= recipe._id %>/likes" method="POST" >
+<form class="like-box" action="/recipes/<%= recipe._id %>/likes" method="POST" >
   <div class="row">
     <fieldset class="rating">
       <input type="radio" id="mood-rating1" name="like" value="5" />
@@ -68,43 +68,35 @@
 </form>
 
 <% if (recipe.likes.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% let total = 0 %>
-      <% recipe.likes.forEach(function(r) { %>
-        <% total += r.like %>
-        <tr>
-          <td class="review-user"><%= r.userName %></td>
-          <td><%= r.createdAt.toLocaleDateString() %></td>
-          <td><%= r.comment %></td>
-          <td><%= r.like %></td>
-          <td>
-            <% if (user && user._id.equals(r.user)) {%>
-              <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-              <% } %>
-          </td>
-        </tr>
-      <% }); %>
-      <tr>
-        <td colspan="2"></td>
-        <td><strong><%= (total / recipe.likes.length).toFixed(1) %></strong></td>
-      </tr>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Reviews Yet</h5>
-<% } %>
+  <% let total = 0 %>
+  <% recipe.likes.forEach(function(r) { %>
+    <% total += r.like %>
+  <div class="row comment-body">
+    <div>
+      <span class="like-user"><%= r.userName %></span>
+      <span class="like-date"><%= r.createdAt.toLocaleDateString() %></span>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <span class="like-rating"><%= r.like %>
+      <p><%= r.comment %></p>
+      </span>
+      <span class="like-delete">
+        <% if (user && user._id.equals(r.user)) {%>
+        <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+    </div>
+      <% } %>
+    </span>
+    <% }); %>
+    <% } else { %>
+      <div>
+        <p>No Reviews Yet</p>
+      </div>
+      <% } %>
+  </div>
 
 
 <%- include('../partials/footer') %>
