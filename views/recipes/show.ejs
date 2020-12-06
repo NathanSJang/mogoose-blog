@@ -43,44 +43,25 @@
   </div>
 
 <form  action="/recipes/<%= recipe._id %>/likes" method="POST" >
-  <div class="row rating">
-    <label>
-      <input type="radio" name="like" value="1" />
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-    </label>
-    <label>
-      <input type="radio" name="like" value="2" />
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-    </label>
-    <label>
-      <input type="radio" name="like" value="3" />
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>   
-    </label>
-    <label>
-      <input type="radio" name="like" value="4" />
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-    </label>
-    <label>
-      <input type="radio" name="like" value="5" />
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-      <span class="icon"><i class="small material-icons">emoji_emotions</i></span>
-    </label>
-  </div>
   <div class="row">
-    <div class="input-field col s12">
-      <input placeholder="Enter Your Comment" id="image-url" type="text" class="validate" name="comment">
-      <label for="image-url">Comment</label>
+    <fieldset class="rating">
+      <input type="radio" id="mood-rating1" name="like" value="5" />
+      <label class = "full" for="mood-rating1"><i class="small material-icons">mood</i></label>
+      <input type="radio" id="mood-rating2" name="like" value="4" />
+      <label class = "full" for="mood-rating2"><i class="small material-icons">mood</i></label>
+      <input type="radio" id="mood-rating3" name="like" value="3" />
+      <label class = "full" for="mood-rating3"><i class="small material-icons">mood</i></label>
+      <input type="radio" id="mood-rating4" name="like" value="2" />
+      <label class = "full" for="mood-rating4"><i class="small material-icons">mood</i></label>
+      <input type="radio" id="mood-rating5" name="like" value="1" />
+      <label class = "full" for="mood-rating5"><i class="small material-icons">mood</i></label>
+    </fieldset>
+      <div class="comment-input input-field col s10">
+        <input placeholder="Enter Your Comment" id="comment-box" type="text" class="validate" name="comment">
+        <label for="comment-box">Comment</label>
     </div>
   </div>
+
   <button class="btn waves-effect waves-light add-btn" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
@@ -100,12 +81,12 @@
     <tbody>
       <% let total = 0 %>
       <% recipe.likes.forEach(function(r) { %>
-        <% total += r.rating %>
+        <% total += r.like %>
         <tr>
           <td class="review-user"><%= r.userName %></td>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.comment %></td>
-          <td><%= r.rating %></td>
+          <td><%= r.like %></td>
           <td>
             <% if (user && user._id.equals(r.user)) {%>
               <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
