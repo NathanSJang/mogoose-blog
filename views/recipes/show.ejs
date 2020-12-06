@@ -80,12 +80,36 @@
   </div>
   <div class="row comment-body">
     <div class="col s12">
-      <span class="like-rating"><%= r.like %></span>
+      <% if(r.like === 5) { %>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <% } %>
+      <% if(r.like === 4) { %>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <% } %>
+      <% if(r.like === 3) { %>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <% } %>
+      <% if(r.like === 2) { %>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <% } %>
+      <% if(r.like === 1) { %>
+        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <% } %>
       <p class="like-comment"><%= r.comment %></p>
       <span class="like-delete delete-btn">
         <% if (user && user._id.equals(r.user)) {%>
         <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
-          <button type="submit">X</button>
+          <button class="btn waves-effect waves-light" type="submit">X</button>
         </form>
       </span>
       </div>
@@ -96,7 +120,7 @@
     <% } else { %>
       <div class="row">
         <div clas="col s12">
-          <p class="like-comment">No Reviews Yet</p>
+          <p class="like-comment">No Comment Yet</p>
         </div>
       </div>
       <% } %>
