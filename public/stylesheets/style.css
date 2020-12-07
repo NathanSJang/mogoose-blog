@@ -8,6 +8,26 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+nav {
+  box-shadow: 0 0 0 0;
+}
+
+nav ul a:hover {
+  background-color: white !important;
+  color: gray !important;
+}
+
+footer {
+  text-align: center;
+}
+
+.footer-hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .section {
   margin-bottom: 50px;
 }
@@ -83,8 +103,20 @@ a {
   text-align: center;
   font-size: 20px;
 }
+.recipe-footer {
+  text-align: left;
+}
+
+.back-btn {
+  float: left;
+  margin-top: 2em;
+}
 
 /* recipe show page*/
+.recipe-detali {
+  margin-top: 8em;
+}
+
 ul > li {
   margin: 10px;
   padding-left: 20px;
@@ -165,4 +197,11 @@ label {
 .like-comment {
   display: inline;
   margin-left: 2em;
+}
+
+.like-hr {
+  margin-top: 2em;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }

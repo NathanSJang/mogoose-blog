@@ -13,14 +13,14 @@
 </head>
 <body>
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper white">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/cuisines">Recipes</a></li>
-        <li><a href="#">About Me</a></li>
+        <li><a class="black-text" href="/cuisines">Recipes</a></li>
+        <li><a class="black-text" href="/aboutme">About Me</a></li>
         <% if (user) { %>
-          <li><a href="/logout">LOG OUT</a></li>
+          <li><a class="black-text" href="/logout">LOG OUT</a></li>
           <% } else { %>
-          <li><a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png">LOG IN</a></li>
+          <li><a class="black-text" href="/auth/google" class="login">LOG IN</a></li>
         <% } %>
       </ul>
     </di>

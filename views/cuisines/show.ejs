@@ -12,6 +12,7 @@
 </span>
 
 <div>
+  <% if (recipe.length) { %>
 <% recipe.forEach(function(r) { %>
   <header>
     <p class="recipe-title"> <%= r.title %></p>
@@ -29,7 +30,7 @@
     </div>
   </div>
       <hr>
-      <footer>
+      <footer class="recipe-footer">
         <div class="footer-icon">
           <% if(user.admin) { %>
             <form action="/recipes/<%= r._id %>?_method=DELETE" class="delte-form" method="POST">
@@ -49,8 +50,24 @@
             <%= cuisine.name %>
           </span>
         </div>
+        <button class="waves-effect black btn-small delete-btn back-btn">
+          <a class="white-text" href="/cuisines"><i class="tiny material-icons white-text">arrow_back</i></a>
+      </button>
       </footer>
   <% }); %>
+  <% } else { %>
+    <div class="row">
+      <div clas="col s12">
+        <div class="card-image">
+          <img class="recipe-image" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="recipe-image">
+        </div>
+        <h6 class="like-comment">Sorry No Recipe Yet</h6>
+      </div>
+    </div>
+        <button class="waves-effect black btn-small delete-btn back-btn">
+            <a class="white-text" href="/cuisines"><i class="tiny material-icons white-text">arrow_back</i></a>
+        </button>
+    <% } %>
 </div>
 
 

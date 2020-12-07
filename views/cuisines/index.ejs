@@ -2,18 +2,17 @@
 
 <span>
   <h1><%= title %>
-    <button type="submit" class="waves-light btn-small add-btn"> 
+    <button type="submit" class="waves-light black btn-small add-btn"> 
       <% if(user.admin) { %>
-      <a class="add" href="/cuisines/new">Add Cuisines</a>
+      <a class="add white-text" href="/cuisines/new">Add Cuisines
+        <i class="material-icons right white-text">local_dining</i>
+      </a>
       <% } %>
     </button>
   </h1>
 </span>
 
 <div class="section">
-  <div class="col s12">
-    <span class="title"><%= title %></span>
-  </div>
   <div class="row">
   <% if (cuisines.length) { %>
     <% cuisines.forEach(function(c) { %>
