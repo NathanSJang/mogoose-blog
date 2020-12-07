@@ -8,7 +8,7 @@ module.exports = {
 function create(req, res) {
   Recipes.findById(req.params.id, function(err, recipe) {
     //add User info
-    req.body.user = req.user._id
+    req.body.user = req.user.admin
     req.body.userName = req.user.name;
 
     recipe.likes.push(req.body);

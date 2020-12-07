@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 <span>
   <h1><%= title %>
-    <button type="submit" class="btn waves-effect black add-btn white-text"> 
-      <% if(user.admin) { %>
-      <a class="add white-text" href="/cuisines/<%= cuisine._id %>/recipes/new">Add recipe 
-        <i class="material-icons right white-text">local_dining</i>
-      </a>
+    <% if(user.admin) { %>
+      <a class="add white-text" href="/cuisines/<%= cuisine._id %>/recipes/new">
+        <button class="btn waves-effect black add-btn white-text"> 
+          Add recipe<i class="material-icons right white-text">local_dining</i>
+      </button>
+    </a>
       <% } %>
-    </button>
   </h1>
 </span>
 

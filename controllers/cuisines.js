@@ -1,4 +1,3 @@
-const { NotExtended } = require('http-errors');
 const Cuisines = require('../models/cuisines');
 const Recipes = require('../models/recipe');
 
@@ -12,6 +11,7 @@ module.exports = {
 
 function index(req, res) {
   Cuisines.find({}, function(err, cuisines) {
+    console.log(cuisines)
     res.render('cuisines/index', { title: 'Cuisines', cuisines });
   });
 };
@@ -30,6 +30,8 @@ function show(req, res) {
 };
 
 function create(req, res) {
+  req.body.user = req.user._id
+
   let cuisines = new Cuisines(req.body);
   cuisines.save(function(err) {
     if(err) return res.render('cuisines/new');
