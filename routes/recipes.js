@@ -6,7 +6,7 @@ const isLoggedIn = require('../config/auth');
 /* GET users listing. */
 router.get('/cuisines/:id/recipes/new', isLoggedIn, recipesCtrl.new);
 router.get('/recipes/:id', isLoggedIn, recipesCtrl.show);
-router.get('/recipes/:id/edit', isLoggedIn, recipesCtrl.edit);
+// router.get('/recipes/:id/edit', isLoggedIn, recipesCtrl.edit);
 router.post('/cuisines/:id/recipes', isLoggedIn, recipesCtrl.create);
 router.delete('/recipes/:id', isLoggedIn, recipesCtrl.delete);
 

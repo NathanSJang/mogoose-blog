@@ -42,27 +42,29 @@
         </footer>
   </div>
   
-<button class="waves-effect black btn-small delete-btn back-btn">
-    <a class="white-text" href="/cuisines/<%= cuisine._id %>"><i class="tiny material-icons white-text">arrow_back</i></a>
-</button>
+  <a class="white-text" href="/cuisines/<%= cuisine._id %>">
+    <button class="waves-effect black btn-small delete-btn back-btn">
+      <i class="tiny material-icons white-text">arrow_back</i>
+    </button>
+  </a>
 
 <form class="like-box" action="/recipes/<%= recipe._id %>/likes" method="POST" >
   <div class="row">
-    <fieldset class="rating">
-      <input type="radio" id="mood-rating1" name="like" value="5" />
-      <label class = "full" for="mood-rating1"><i class="small material-icons">mood</i></label>
-      <input type="radio" id="mood-rating2" name="like" value="4" />
-      <label class = "full" for="mood-rating2"><i class="small material-icons">mood</i></label>
-      <input type="radio" id="mood-rating3" name="like" value="3" />
-      <label class = "full" for="mood-rating3"><i class="small material-icons">mood</i></label>
-      <input type="radio" id="mood-rating4" name="like" value="2" />
-      <label class = "full" for="mood-rating4"><i class="small material-icons">mood</i></label>
-      <input type="radio" id="mood-rating5" name="like" value="1" />
-      <label class = "full" for="mood-rating5"><i class="small material-icons">mood</i></label>
-    </fieldset>
-      <div class="comment-input input-field col s10">
-        <input placeholder="Enter Your Comment" id="comment-box" type="text" class="validate" name="comment">
-        <label for="comment-box">Comment</label>
+        <fieldset class="rating col s2">
+          <input type="radio" id="mood-rating1" name="like" value="5" />
+          <label class = "full" for="mood-rating1"><i class="small material-icons">mood</i></label>
+          <input type="radio" id="mood-rating2" name="like" value="4" />
+          <label class = "full" for="mood-rating2"><i class="small material-icons">mood</i></label>
+          <input type="radio" id="mood-rating3" name="like" value="3" />
+          <label class = "full" for="mood-rating3"><i class="small material-icons">mood</i></label>
+          <input type="radio" id="mood-rating4" name="like" value="2" />
+          <label class = "full" for="mood-rating4"><i class="small material-icons">mood</i></label>
+          <input type="radio" id="mood-rating5" name="like" value="1" />
+          <label class = "full" for="mood-rating5"><i class="small material-icons">mood</i></label>
+        </fieldset>
+          <div class="comment-input input-field col s10">
+            <input placeholder="Enter Your Comment" id="comment-box" type="text" class="validate" name="comment">
+            <label for="comment-box">Comment</label>
     </div>
   </div>
 
@@ -113,10 +115,10 @@
         <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
           <button class="btn waves-effect black" type="submit"><i class="small material-icons white-text">delete_outline</i></button>
         </form>
-          <a href="/recipes/<%= recipe.id %>/edit">
-            <button class="btn waves-effect black" type="submit"><i class="small material-icons white-text">create</i></button>
-          </a>
       </span>
+          <a href="/likes/<%= r.id %>/edit">
+            <button class="btn waves-effect black edit-btn" type="submit"><i class="small material-icons white-text">create</i></button>
+          </a>
       <hr class="like-hr">
       </div>
     </div>

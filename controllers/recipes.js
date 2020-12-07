@@ -4,7 +4,7 @@ const Cuisines = require('../models/cuisines');
 module.exports = {
   new: newRecipe,
   show,
-  edit,
+  // edit,
   create,
   delete: deleteRecipe,
 };
@@ -23,11 +23,11 @@ function show(req, res) {
   });
 };
 
-function edit(req, res) {
-  Recipes.findById(req.params.id, function(err, recipe) {
-    res.render('recipes/edit', { title: 'Edit Your Comment', recipe});
-  });
-};
+// function edit(req, res) {
+//   Recipes.findById(req.params.id, function(err, recipe) {
+//     res.render('recipes/edit', { title: 'Edit Your Comment', recipe});
+//   });
+// };
 
 
 function create(req, res) {
