@@ -73,9 +73,7 @@
 
 <div class="comment-box">
 <% if (recipe.likes.length) { %>
-  <% let total = 0 %>
   <% recipe.likes.forEach(function(r) { %>
-    <% total += r.like %>
   <div class="row comment-head">
     <div class="col s12">
       <span class="like-user"><%= r.userName %></span>
@@ -115,6 +113,9 @@
         <form action="/likes/<%= r._id %>?_method=DELETE" method="POST">
           <button class="btn waves-effect black" type="submit"><i class="small material-icons white-text">delete_outline</i></button>
         </form>
+          <a href="/recipes/<%= recipe.id %>/edit">
+            <button class="btn waves-effect black" type="submit"><i class="small material-icons white-text">create</i></button>
+          </a>
       </span>
       <hr class="like-hr">
       </div>
