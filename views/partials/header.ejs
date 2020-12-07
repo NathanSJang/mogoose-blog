@@ -15,11 +15,12 @@
   <nav>
     <div class="nav-wrapper white">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="black-text" href="/">Home</a></li>
         <li><a class="black-text" href="/cuisines">Recipes</a></li>
         <li><a class="black-text" href="/aboutme">About Me</a></li>
         <% if (user) { %>
           <li><a class="black-text" href="/logout">LOG OUT</a></li>
-          <% } else { %>
+        <% } else { %>
           <li><a class="black-text" href="/auth/google" class="login">LOG IN</a></li>
         <% } %>
       </ul>

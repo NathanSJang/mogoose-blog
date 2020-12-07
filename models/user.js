@@ -10,7 +10,10 @@ const userSchema = new Schema({
   },
   email: String,
   avatar: String,
-  admin: false,
+  admin: {
+    type: Boolean,
+    default: false
+  },
 }, {
   timestamps: true
 });

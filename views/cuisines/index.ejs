@@ -1,45 +1,34 @@
 <%- include('../partials/header') %>
 
 <span>
-  <h1><%= title %>
-    <button type="submit" class="waves-light black btn-small add-btn"> 
-      <% if(!!user.admin) { %>
-      <a class="add white-text" href="/cuisines/new">Add Cuisines
-        <i class="material-icons right white-text">local_dining</i>
-      </a>
-      <% } %>
-    </button>
-  </h1>
+  <h1><%= title %></h1>
 </span>
 
 <div class="section">
   <div class="row">
-  <% if (cuisines.length) { %>
-    <% cuisines.forEach(function(c) { %>
-  <div class="col s4">
-    <div class="card">
-      <a href="/cuisines/<%= c._id %>">
-        <div class="card-image">
-          <img class="cuisine-image" src="<%= c.imageUrl %>">
-        </div>
-      </a>
-      <div class="card-action">
-        <div class="row content-box">
-          <p class="cuisine-title"><%= c.name %></p>
-          <% if(user.admin) { %>
-              <form action="/cuisines/<%= c._id %>?_method=DELETE" class="delte-form" method="POST">
-                <button type="submit" class="waves-effect black btn-small delete-btn"><i class="small material-icons white-text">delete_outline</i></button>
-              </form>
+    <div class="col s12 m12">
+      <% if (cuisines.length) { %>
+        <% cuisines.forEach(function(c) { %>
+      <div class="col s4 m4">
+        <div class="card">
+          <a href="/cuisines/<%= c._id %>">
+            <div class="card-image">
+              <img class="cuisine-image" src="<%= c.imageUrl %>">
+            </div>
+          </a>
+          <div class="card-action">
+            <div class="row content-box">
+              <p class="cuisine-title"><%= c.name %></p>
+            </div>
           </div>
-        <% } %>
+        </div>
       </div>
-    </div>
-  </div>
-    <% }); %>
+  <% }); %>
   </div>
 </div>
   <% } else { %>
   <h3>Please Add cuisines</h3>
   <% } %>
+
 
 <%- include('../partials/footer') %>
