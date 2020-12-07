@@ -3,7 +3,7 @@
 <span>
   <h1><%= title %>
     <button type="submit" class="waves-light black btn-small add-btn"> 
-      <% if(user.admin) { %>
+      <% if(user.admin === ture) { %>
       <a class="add white-text" href="/cuisines/new">Add Cuisines
         <i class="material-icons right white-text">local_dining</i>
       </a>
