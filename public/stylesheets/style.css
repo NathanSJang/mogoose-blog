@@ -204,6 +204,9 @@ label {
   display: inline;
   margin-left: 2em;
 }
+.like-rating {
+  letter-spacing: -3px;
+}
 
 .like-hr {
   margin-top: 2em;
@@ -219,4 +222,18 @@ label {
 
 .edit-input {
   margin-top: 5em;
+}
+
+.aboutme-image {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin: 3em;
+}
+
+.logo-img {
+  width: 95px;
+  margin-top: 0.5em;
+  margin-left: 1em;
 }

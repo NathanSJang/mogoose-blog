@@ -84,29 +84,19 @@
   <div class="row comment-body">
     <div class="col s12">
       <% if(r.like === 5) { %>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span ><i class="small material-icons like-rating">mood mood mood mood mood</i></span>
         <% } %>
       <% if(r.like === 4) { %>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span><i class="small material-icons like-rating">mood mood mood mood</i></span>
         <% } %>
       <% if(r.like === 3) { %>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span><i class="small material-icons like-rating">mood mood mood</i></span>
         <% } %>
       <% if(r.like === 2) { %>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span><i class="small material-icons like-rating">mood mood</i></span>
         <% } %>
       <% if(r.like === 1) { %>
-        <span class="like-rating"><i class="small material-icons">mood</i></span>
+        <span><i class="small material-icons like-rating">mood</i></span>
         <% } %>
       <p class="like-comment"><%= r.comment %></p>
       <span class="like-delete delete-btn">
