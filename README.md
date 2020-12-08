@@ -1,6 +1,6 @@
 <h1 align="center">Nathan's Recipe Blog</h1>
 
-<p align="center"><img src="https://imgur.com/UzeMPFm" alt="Nathan recipe"></p>
+<p align="center"><img src="https://i.imgur.com/2zrP3Za.png" alt="Nathan recipe"></p>
 
 This is My first project using CRUD
 
