@@ -233,7 +233,17 @@ label {
 }
 
 .logo-img {
-  width: 95px;
+  width: 70px;
   margin-top: 0.5em;
   margin-left: 1em;
+}
+
+.index-img {
+  width: 58%;
+  float: left;
+}
+
+.index-content {
+  margin-top: 3.5em;
+  text-align: center;
 }
